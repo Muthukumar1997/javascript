@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clear {
+        width: 250px;
+        height: 65px;
+      }
+      .result {
+        width: 335px;
+        height: 55px;
+      }
+      table {
+        border: 5px solid rgb(246, 164, 164);
+        margin-top: 130px;
+        margin-left: 250px;
+      }
+      body {
+        background-color: rgb(60, 59, 59);
+      }
+
+      button {
+        width: 80px;
+        height: 75px;
+        font-size: 30px;
+        font-weight: bolder;
+        border-radius: 5px;
+      }
+    </style>
+    <script>
+       
+        function send(i){
+       var   x = document.getElementById("input");
+        var  y =  document.getElementById("result");
+ 
+          switch(i){
+                case 1: x.value+=1; break;
+                case 2: x.value +=2; break;
+                case 3: x.value +=3; break;
+                case 4: x.value +=4; break;
+                case 5: x.value +=5; break;
+                case 6: x.value +=6; break;
+                case 7: x.value +=7; break;
+                case 8: x.value +=8; break;
+                case 9: x.value +=9; break;
+                case 0: x.value +=0; break;
+
+                case '.': x.value +='.'; break;
+                case '+': x.value +='+'; break;
+                case '-': x.value += '-'; break;
+                case '*': x.value += '*'; break;
+                case '/': x.value += '/'; break;
+                case 'c':
+                   x.value = ""; 
+                   y.value = "";
+                   break;
+
+                
+
+     }
+        }
+        function end(){
+              var result = eval(document.getElementById("input").value);
+             document.getElementById("result").value = result;
+        }
+
+    </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="3"><input id="input" class="clear" ></input></td>
+        <td><button onclick="send('c')">c</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="send(9)">9</button></td>
+        <td><button onclick="send(8)">8</button></td>
+        <td><button onclick="send(7)">7</button></td>
+        <td><button onclick="send('+')">+</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="send(6)">6</button></td>
+        <td><button onclick="send(5)">5</button></td>
+        <td><button onclick="send(4)">4</button></td>
+        <td><button onclick="send('-')">-</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="send(3)">3</button></td>
+        <td><button onclick="send(2)">2</button></td>
+        <td><button onclick="send(1)">1</button></td>
+        <td><button onclick="send('*')">*</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="send(0)">0</button></td>
+        <td><button onclick="send('.')">.</button></td>
+        <td><button onclick="end()">=</button></td>
+        <td><button onclick="send('/')">/</button></td>
+      </tr>
+      <tr>
+        <td colspan="4"><input  id="result" class="result"></input></td>
+      </tr>
+    </table>
+  </body>
+</html>
